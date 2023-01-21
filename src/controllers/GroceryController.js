@@ -18,7 +18,7 @@ module.exports = {
     create(req, res) {
         const { name } = req.body;
         Grocery.create({
-            name, isChecked: false
+            name, checked: false
         })
         .then(grocery => res.status(201).json({
             error: false,
