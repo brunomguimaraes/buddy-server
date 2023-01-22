@@ -35,10 +35,12 @@ module.exports = {
     update(req, res) {
         const grocery_id = req.params.id;
 
-        const { name, isChecked } = req.body;
-
-        User.update({
-            name, isChecked
+        const { name, checked } = req.body;
+console.log(' req =>', req)
+console.log(' res =>', res)
+console.log('=>', {grocery_id, name, checked})
+        Grocery.update({
+            name, checked
         }, {
             where: {
                 id: grocery_id
